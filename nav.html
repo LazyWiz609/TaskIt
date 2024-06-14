@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #191919;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .menubar {
+            color: #FFF;
+            text-align: center;
+            font-size: 2.14vh;
+            font-weight: 400;
+            margin-bottom: 2vh;
+            position: relative; /* Position menubar relative to allow absolute positioning inside it */
+        }
+        .menubar a {
+            text-decoration: none;
+            color: #FFF;
+            margin: 0 10px;
+            position: relative;
+        }
+        .line {
+            background-color: #C84B31;
+            border: 1px solid #C84B31;
+            width: 60%;
+            margin-top: 0.5vh;
+        }
+        .svg-container {
+            position: absolute;
+            margin-top: 0.5vh;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="menubar">
+        <a href="#" class="menu-link">Available Services</a> |
+        <a href="#" class="menu-link">Freelancers</a> |
+        <a href="#" class="menu-link">Leaderboards</a>
+    
+    <div class="svg-container" id="svgContainer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 9" fill="none">
+            <path d="M6.5 0L12.1292 9.75H0.870835L6.5 0Z" fill="#C84B31"/>
+        </svg>
+    </div>
+</div>
+    <hr class="line">
+    <script>
+        function positionSvg(link) {
+            const svgContainer = document.getElementById('svgContainer');
+            const linkRect = link.getBoundingClientRect();
+            const menubarRect = document.querySelector('.menubar').getBoundingClientRect();
+            const svgWidth = svgContainer.offsetWidth;
+
+            // Calculate centerX relative to the menubar
+            const centerX = linkRect.left + (linkRect.width / 2) - menubarRect.left - (svgWidth / 2);
+
+            // Ensure the SVG stays within the menubar bounds
+            const maxLeft = menubarRect.width - svgWidth;
+            const finalX = Math.min(Math.max(0, centerX), maxLeft);
+
+            svgContainer.style.transform = `translateX(${finalX}px)`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstLink = document.querySelectorAll('.menu-link')[0];
+            positionSvg(firstLink);
+
+            document.querySelectorAll('.menu-link').forEach(link => {
+                link.addEventListener('mouseover', (event) => {
+                    positionSvg(event.target);
+                });
+            });
+
+            document.querySelector('.menubar').addEventListener('mouseout', () => {
+                positionSvg(firstLink);
+            });
+        });
+    </script>
+</body>
+</html>

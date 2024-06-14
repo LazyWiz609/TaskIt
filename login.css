@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono';
+}
+body{
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    margin-top: 7.32vh; 
+    height: 40px; 
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginsignup{
+    display: inline-flex;
+    margin-top: 15vh;
+}
+.lgfrm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.signupfrm{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    align-items: center;
+}
+.uname{
+    width: 30.137vw;
+    height: 6.15vh;
+    border-radius: 13px;
+    border: 3px solid #BE3131;
+    background-color: transparent;
+    margin-top: 3.51vh;
+    text-align: center;
+    color: white;
+}
+.uname:focus{
+    outline: none;
+    border: 3px solid #ff2525;
+    transition: 0.5s;
+}
+.uname:focus::placeholder{
+    color: transparent;
+    transition: 0.2s;
+}
+.pass{
+    width: 30.137vw;
+    height: 6.15vh;
+    border-radius: 13px;
+    border: 3px solid #BE4A31;
+    background-color: transparent;
+    margin-top: 2.05vh;
+    color: white;
+    text-align: center;
+}
+.pass:focus{
+    outline: none;
+    border: 3px solid #ee5330;
+    transition: 0.5s;
+}
+.pass:focus::placeholder{
+    color: transparent;
+    transition: 0.2s;
+}
+.email{
+    width: 30.137vw;
+    height: 6.15vh;
+    border-radius: 13px;
+    border: 3px solid #BE6C31;
+    background-color: transparent;
+    margin-top: 2.05vh;
+    text-align: center;
+    color: white;
+}
+.email:focus{
+    outline: none;
+    border: 3px solid #f87f28;
+    transition: 0.5s;
+}
+.email:focus::placeholder{
+    color: transparent;
+    transition: 0.2s;
+}
+.containerlogin {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    color: #F4F4F4;
+    font-size: 2vh;
+    font-style: normal; 
+    font-weight: 400;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 25%;
+    margin-top: 2.45vh;
+  }
+
+  .containersignup {
+    display: flex;
+    cursor: pointer;
+    color: #F4F4F4;
+    font-size: 2vh;
+    font-style: normal; 
+    font-weight: 400;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 29%;
+    margin-top: 2.45vh;
+  }
+
+  .containerlogin input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .containersignup input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  
+  .checkmark {
+    display: inline-block;
+    border-radius:50%;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1.364px solid #BE9F31;
+    margin-right: 1vw;
+    box-sizing: border-box;
+  }
+  
+  
+  .containerlogin:hover input ~ .checkmark {
+    border: 2.6px solid #BE9F31;
+  }
+  .containersignup:hover input ~ .checkmark {
+    border: 2.6px solid #BE9F31;
+  }
+  
+  
+  .containerlogin input:checked ~ .checkmark {
+    background-color: #BE9F31;
+  }
+
+  .containersignup input:checked ~ .checkmark {
+    background-color: #BE9F31;
+  }
+
+
+  .submitsignup{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 31%;
+    border: 4px solid #B3BE31;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  .submitsignup:hover{
+    background-color: #939c2f;
+    transition: 0.3s;
+  }
+
+  .submitlogin{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 31%;
+    border: 4px solid #BE6C31;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  .submitlogin:hover{
+    background-color: #CE7B3F;
+    transition: 0.3s;
+  }
+  .arrowdown{
+    display: block;
+    width: 6px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 0 3px 3px ;
+    border-color: white;
+    background-color: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3px;
+    transform: rotate(-45deg);
+  }
+  .pagedown{
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: solid white;
+    border-width: 0 0 3px 3px ;
+    background-color: none;
+    margin-left: auto;
+    margin-right: auto;
+    transform: rotate(-45deg); 
+    margin-top: 10vh;
+    box-sizing: border-box;
+  }
+  .pagedown:hover{
+    margin-top: 10.5vh;
+    transition: 0.3s ease-in-out;
+  }
+  .line{
+    color: white;
+  }
